@@ -1,0 +1,12 @@
+version: '3'
+services:
+  web:
+    image: ${application}
+    volumes:
+      - ./templates:/usr/share/${application}/html
+    ports:
+      - "10000:80"
+    environment:
+      - ${application}_HOST
+      - ${application}_PORT
+    command: ${application} -g 'daemon off;'

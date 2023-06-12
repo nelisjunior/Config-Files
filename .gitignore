@@ -1,0 +1,9 @@
+# Ignora os arquivos
+
+Dockerfile
+*.env
+*.conf
+*.pid
+
+# Ignora pastas
+.vscode/

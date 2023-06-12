@@ -1,0 +1,10 @@
+server {
+    listen ${JUPYTER_PORT_OUT};
+    server_name ${JUPYTER_SERVER};
+
+    location / {
+        proxy_pass http://${JUPYTER_CONTAINER_IP}:${JUPYTER_PORT_IN};
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}
